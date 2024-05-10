@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfr76ov3fxrkb"]
+
+[ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="1_ddcra"]
+[ext_resource type="Script" path="res://Players/center_object.gd" id="1_xna1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ee76"]
+size = Vector2(39, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7mso"]
+size = Vector2(39, 78)
+
+[node name="CenterObject" type="Node2D"]
+script = ExtResource("1_xna1a")
+
+[node name="Right2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right2D"]
+position = Vector2(-20.5, 0)
+shape = SubResource("RectangleShape2D_1ee76")
+
+[node name="Left2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left2D"]
+position = Vector2(19.5, 0)
+shape = SubResource("RectangleShape2D_a7mso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ddcra")
+
+[connection signal="body_entered" from="Right2D" to="." method="_on_right_body_entered"]
+[connection signal="body_exited" from="Right2D" to="." method="_on_right_body_exited"]
+[connection signal="body_entered" from="Left2D" to="." method="_on_left_body_entered"]
+[connection signal="body_exited" from="Left2D" to="." method="_on_left_body_exited"]

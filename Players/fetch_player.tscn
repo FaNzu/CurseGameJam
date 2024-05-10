@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cejci8s771bp8"]
+
+[ext_resource type="Script" path="res://Players/FetchPlayer.gd" id="1_85ekl"]
+[ext_resource type="Texture2D" uid="uid://cf5n3opxjsfcf" path="res://Assets/Art/Arm.png" id="2_8cnt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3ybp"]
+size = Vector2(268.102, 22.6296)
+
+[node name="FetchPlayer" type="CharacterBody2D"]
+script = ExtResource("1_85ekl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-353.736, -3.26699)
+rotation = 3.14159
+scale = Vector2(1.11097, 0.275699)
+texture = ExtResource("2_8cnt8")
+
+[node name="ArmCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-454.313, -0.266983)
+scale = Vector2(3.375, 3.375)
+shape = SubResource("RectangleShape2D_c3ybp")
+debug_color = Color(0, 0.564706, 0.858824, 0.47451)

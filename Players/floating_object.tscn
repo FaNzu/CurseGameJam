@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://f4y71ybjpie3"]
+
+[ext_resource type="Script" path="res://Players/floating_object.gd" id="1_igt6v"]
+[ext_resource type="Texture2D" uid="uid://dhm5mba2hxub3" path="res://Assets/Art/Blomst.png" id="2_w5uc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ngy3"]
+
+[node name="FloatingObject" type="Area2D"]
+script = ExtResource("1_igt6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0263846, 0.0263847)
+texture = ExtResource("2_w5uc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ngy3")
+
+[connection signal="body_entered" from="." to="." method="_on_player_collison_body_entered"]
