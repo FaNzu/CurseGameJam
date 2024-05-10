@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0hvq5gerjbh7"]
+
+[ext_resource type="PackedScene" uid="uid://cejci8s771bp8" path="res://fetch_player.tscn" id="1_j4nln"]
+
+[node name="FetchGame" type="Node2D"]
+
+[node name="Center point" type="Node2D" parent="."]
+position = Vector2(600, 350)
+
+[node name="FetchPlayer" parent="." instance=ExtResource("1_j4nln")]
+position = Vector2(424, 367)

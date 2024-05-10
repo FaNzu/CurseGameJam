@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr161xdulmc3a"]
+
+[ext_resource type="Script" path="res://Menus/credits.gd" id="1_7mvhx"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_7mvhx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+light_mask = 512
+visibility_layer = 512
+position = Vector2(600.079, 374.921)
+scale = Vector2(0.999869, 1.00021)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="Sprite2D"]
+offset_left = -577.155
+offset_top = -350.847
+offset_right = -115.155
+offset_bottom = -247.847
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 75
+text = "Curse of the pond"
+
+[node name="UnderTitle" type="Label" parent="Sprite2D"]
+offset_left = 83.44
+offset_top = -317.0
+offset_right = 579.44
+offset_bottom = -261.995
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "And the depressive frog"
+
+[node name="Credits" type="Label" parent="Sprite2D"]
+offset_left = -564.153
+offset_top = -236.871
+offset_right = 379.847
+offset_bottom = 224.129
+theme_override_colors/font_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "A game by Posion dark frogs
+
+Ask H: Programming
+Kim Allan: Creative Lead
+
+"
+
+[node name="CreditsButton" type="Button" parent="Sprite2D"]
+offset_left = -569.154
+offset_top = 266.023
+offset_right = -234.154
+offset_bottom = 328.023
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Sprite2D/CreditsButton" to="." method="_on_credits_button_pressed"]
