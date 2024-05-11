@@ -57,6 +57,7 @@ func _on_ez_dialogue_custom_signal_received(value):
 func _on_ez_dialogue_end_of_dialogue_reached():
 	Game.playerName = "sdtfuhovc2ty13"
 	$DialogueBox.hide()
+	$BoardCharacters.show()
 	$Button.show()
 	$DialogueBox.is_dialogue_done = true
 
