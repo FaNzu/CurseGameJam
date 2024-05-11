@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://iugdevvkpbib"]
+[gd_scene load_steps=12 format=3 uid="uid://iugdevvkpbib"]
 
 [ext_resource type="Texture2D" uid="uid://8q3ebhx8tgmf" path="res://Assets/Art/pond22222.png" id="1_0j5fh"]
 [ext_resource type="Script" path="res://Utility/Main.gd" id="1_2rxho"]
@@ -7,6 +7,14 @@
 [ext_resource type="Script" path="res://Menus/DialogueBox.gd" id="4_uxkol"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_p2pq8"]
 [ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="6_nrnkq"]
+[ext_resource type="Texture2D" uid="uid://dhm5mba2hxub3" path="res://Assets/Art/Blomst.png" id="8_878ql"]
+[ext_resource type="Script" path="res://Menus/MentalityMeter.gd" id="9_c8ivt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_debbw"]
+bg_color = Color(0.933839, 0.266662, 0.852781, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi8wk"]
+bg_color = Color(0.236294, 0.705583, 0.366508, 1)
 
 [node name="Pond" type="Node2D"]
 script = ExtResource("1_2rxho")
@@ -16,23 +24,6 @@ dialogue_json = ExtResource("2_cq58q")
 position = Vector2(600, 375)
 scale = Vector2(1, 1.07143)
 texture = ExtResource("1_0j5fh")
-
-[node name="DialogueBox" type="Node2D" parent="."]
-position = Vector2(326, 614)
-script = ExtResource("4_uxkol")
-
-[node name="Panel" type="Panel" parent="DialogueBox"]
-offset_right = 552.0
-offset_bottom = 126.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
-anchors_preset = -1
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Text" type="Label" parent="DialogueBox/VBoxContainer"]
-layout_mode = 2
-text = "This is some dialogue"
 
 [node name="EzDialogue" type="Node" parent="."]
 script = ExtResource("5_p2pq8")
@@ -79,6 +70,60 @@ texture = ExtResource("3_trcfy")
 [node name="Frog" type="Sprite2D" parent="Pods"]
 texture = ExtResource("6_nrnkq")
 
+[node name="DialogueBox" type="Node2D" parent="."]
+visible = false
+script = ExtResource("4_uxkol")
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox"]
+offset_right = 1203.0
+offset_bottom = 750.0
+color = Color(0.41, 0.41, 0.41, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+offset_left = 211.0
+offset_top = 501.0
+offset_right = 1007.0
+offset_bottom = 748.0
+
+[node name="Text" type="Label" parent="DialogueBox/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "This is some dialogue"
+
+[node name="PlayerSprite" type="Sprite2D" parent="DialogueBox"]
+position = Vector2(148, 366)
+texture = ExtResource("6_nrnkq")
+
+[node name="CutsceneNPC" type="Sprite2D" parent="DialogueBox"]
+position = Vector2(980, 142)
+scale = Vector2(0.368991, 0.368991)
+texture = ExtResource("8_878ql")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 614.0
+offset_right = 723.0
+offset_bottom = 659.0
+text = "Ready to start level"
+
+[node name="MentalityMeter" type="Node2D" parent="."]
+position = Vector2(339, 680)
+script = ExtResource("9_c8ivt")
+
+[node name="ColorRect" type="ColorRect" parent="MentalityMeter"]
+offset_right = 477.0
+offset_bottom = 70.0
+color = Color(0.834614, 0.834614, 0.834614, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="MentalityMeter"]
+offset_right = 476.0
+offset_bottom = 69.0
+theme_override_styles/background = SubResource("StyleBoxFlat_debbw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wi8wk")
+max_value = 18.0
+value = 9.0
+
 [connection signal="custom_signal_received" from="EzDialogue" to="." method="_on_ez_dialogue_custom_signal_received"]
 [connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]
 [connection signal="end_of_dialogue_reached" from="EzDialogue" to="." method="_on_ez_dialogue_end_of_dialogue_reached"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

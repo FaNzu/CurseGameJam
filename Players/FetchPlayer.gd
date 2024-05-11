@@ -10,6 +10,10 @@ const screen_size = Vector2(1200,700)
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	$Sprite2D.texture = load("res://Assets/Art/Arm.png")
+	if Game.fetch_arms_sprite == "tongue":
+		$Sprite2D.texture = load("res://Assets/Art/Arm.png")
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO

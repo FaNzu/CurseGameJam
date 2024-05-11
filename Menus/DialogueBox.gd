@@ -29,7 +29,8 @@ func add_choice(choice_text: String):
 func _on_choice_selected(choice_index: int):
 	if !is_dialogue_done:
 		($"../EzDialogue" as EzDialogue).next(choice_index)
-	else:
-		clear_dialogue_box()
-		$Panel.hide()
-		get_tree().change_scene_to_file("res://Levels/FetchGame.tscn")
+
+func Start_level():
+	clear_dialogue_box()
+	get_tree().change_scene_to_file("res://Levels/FetchGame.tscn")
+	queue_free()
