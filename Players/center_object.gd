@@ -22,3 +22,4 @@ func _on_left_body_exited(body):
 func _physics_process(delta):
 	if player1Center and player2Center:
 		print("YOU WIN")
+		get_tree().change_scene_to_file("res://Menus/pond.tscn")

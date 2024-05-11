@@ -4,7 +4,7 @@ extends Node
 @onready var state = {
 	"show_only_one": false,
 	"player_name": "Frog 921",
-	"level": 0,
+	"level": 1,
 	"mentality": 5,
 	"mosquito_choice": false,
 	"beetle_eaten": false,
