@@ -1,55 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://iugdevvkpbib"]
+[gd_scene load_steps=8 format=3 uid="uid://iugdevvkpbib"]
 
 [ext_resource type="Texture2D" uid="uid://8q3ebhx8tgmf" path="res://Assets/Art/pond22222.png" id="1_0j5fh"]
-[ext_resource type="PackedScene" uid="uid://dprn0ein2x4jb" path="res://Players/pond_player.tscn" id="2_ebdfa"]
+[ext_resource type="Script" path="res://Utility/Main.gd" id="1_2rxho"]
+[ext_resource type="JSON" path="res://Assets/dialogue.json" id="2_cq58q"]
 [ext_resource type="Texture2D" uid="uid://chq2wy2632sj" path="res://Assets/Art/akandemedfarve.png" id="3_trcfy"]
+[ext_resource type="Script" path="res://Menus/DialogueBox.gd" id="4_uxkol"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_p2pq8"]
+[ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="6_nrnkq"]
 
 [node name="Pond" type="Node2D"]
+script = ExtResource("1_2rxho")
+dialogue_json = ExtResource("2_cq58q")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Bagground" type="Sprite2D" parent="."]
 position = Vector2(600, 375)
 scale = Vector2(1, 1.07143)
 texture = ExtResource("1_0j5fh")
 
-[node name="PondPlayer" parent="." instance=ExtResource("2_ebdfa")]
-position = Vector2(602, 375)
-scale = Vector2(0.34, 0.34)
+[node name="DialogueBox" type="Node2D" parent="."]
+position = Vector2(326, 614)
+script = ExtResource("4_uxkol")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Panel" type="Panel" parent="DialogueBox"]
+offset_right = 552.0
+offset_bottom = 126.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+anchors_preset = -1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="Label" parent="DialogueBox/VBoxContainer"]
+layout_mode = 2
+text = "This is some dialogue"
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("5_p2pq8")
+
+[node name="Pods" type="Node2D" parent="."]
 position = Vector2(601, 373)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Pods"]
 position = Vector2(100, 30)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="Pods"]
 position = Vector2(200, -30)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D3" type="Sprite2D" parent="Pods"]
 position = Vector2(50, -200)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D4" type="Sprite2D" parent="Pods"]
 position = Vector2(-100, -50)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D5" type="Sprite2D" parent="Pods"]
 position = Vector2(-200, -30)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D6" type="Sprite2D" parent="Pods"]
 position = Vector2(-280, 100)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D7" type="Sprite2D" parent="Pods"]
 position = Vector2(-63, 90)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D8" type="Sprite2D" parent="Pods"]
 position = Vector2(0, 200)
 texture = ExtResource("3_trcfy")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
+[node name="Sprite2D9" type="Sprite2D" parent="Pods"]
 position = Vector2(140, 240)
 texture = ExtResource("3_trcfy")
+
+[node name="Frog" type="Sprite2D" parent="Pods"]
+texture = ExtResource("6_nrnkq")
+
+[connection signal="custom_signal_received" from="EzDialogue" to="." method="_on_ez_dialogue_custom_signal_received"]
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]
+[connection signal="end_of_dialogue_reached" from="EzDialogue" to="." method="_on_ez_dialogue_end_of_dialogue_reached"]
