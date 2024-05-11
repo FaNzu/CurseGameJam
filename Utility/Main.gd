@@ -37,8 +37,11 @@ func _on_ez_dialogue_custom_signal_received(value):
 		state[variable_name] = int(variable_value)
 		if variable_name == "level":
 			Game.level = int(variable_value)
-		if variable_name == "level_sprite_type":
+		elif variable_name == "level_sprite_type":
 			Game.level_sprite_type = variable_value
+		elif variable_name == "mentality":
+			Game.mentality += int(variable_value)
+			$MentalityMeter/ProgressBar.value += int(variable_value)
 	if params[0] == "setvector":
 		var variable_name = params[1]
 		var variable_valuex = params[2]

@@ -100,6 +100,7 @@ scale = Vector2(0.368991, 0.368991)
 texture = ExtResource("8_878ql")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 440.0
 offset_top = 614.0
 offset_right = 723.0

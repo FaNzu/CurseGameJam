@@ -1,6 +1,6 @@
 [
 	{
-		"commands_raw": "hello ${player_name}.\n---\nThis is a dialogue text.\nIsnt it easy?\n\n$if level == 1 {\nAnxiety tema\n?> go to level 1 -> level number 1\n}\n\n$if level == 2 {\nbille tema\n?> go to level two -> level number 2\n}\n\n$if level == 3{\nViden about curse\n    ?> go to level 3 -> level number 3\n}\n\n$if level == 4 {\nAnxeity\n    ?> this is a choice number two -> level number 4\n}\n\n$if level == 5 {\ntadepole vs mosquito\n    ?> this is a choice number two -> level number 5\n}\n\n$if level == 6 {\nGet the hat\n    ?> this is a choice number two -> level number 6\n}\n\n$if level == 7 {\nBeetle with flowers\n    ?> this is a choice number two -> level number 7\n}\n\n$if level == 8{\nTrust Beetle vs tadpole\n    ?> this is a choice number two -> level number 8\n}\n\n$if level == 9{\nSnake battle\n    ?> this is a choice number two -> level number 9\n}",
+		"commands_raw": "hello ${player_name}.\n---\nThis is a dialogue text.\nIsnt it easy?\n?> go to testing -> Testing\n\n$if level == 1 {\nAnxiety tema\n?> go to level 1 -> level number 1\n}\n\n$if level == 2 {\nbille tema\n?> go to level two -> level number 2\n}\n\n$if level == 3{\nViden about curse\n    ?> go to level 3 -> level number 3\n}\n\n$if level == 4 {\nAnxeity\n    ?> this is a choice number two -> level number 4\n}\n\n$if level == 5 {\ntadepole vs mosquito\n    ?> this is a choice number two -> level number 5\n}\n\n$if level == 6 {\nGet the hat\n    ?> this is a choice number two -> level number 6\n}\n\n$if level == 7 {\nBeetle with flowers\n    ?> this is a choice number two -> level number 7\n}\n\n$if level == 8{\nTrust Beetle vs tadpole\n    ?> this is a choice number two -> level number 8\n}\n\n$if level == 9{\nSnake battle\n    ?> this is a choice number two -> level number 9\n}",
 		"gnode_name": "start",
 		"id": 0,
 		"name": "start",
@@ -10,7 +10,7 @@
 		]
 	},
 	{
-		"commands_raw": "Variable balue before custom signal = ${sprite_location}\n---\nsignal(setvector,sprite_location,-100,-50)\nsignal(set,level,1)\nsignal(position,Pods/Frog,sprite_location)",
+		"commands_raw": "mentality\nsignal(set,mentality,1)\n?> go to testing 2 -> Testing 2",
 		"gnode_name": "testing",
 		"id": 3,
 		"name": "Testing",
@@ -20,7 +20,7 @@
 		]
 	},
 	{
-		"commands_raw": "level number 2\ngood luck\nsignal(setvector,sprite_location,-200,-30)\nsignal(set,level,3)\nsignal(set,level_sprite_type,flower)\n---\ngood luck in level 2\nsignal(position,Pods/Frog,sprite_location)",
+		"commands_raw": "level number 2\ngood luck\nsignal(setvector,sprite_location,-200,-30)\nsignal(set,level,3)\nsignal(set,level_sprite_type,flower)\nsignal(set,mentality,-1)\n---\ngood luck in level 2\nsignal(position,Pods/Frog,sprite_location)",
 		"gnode_name": "level number 2",
 		"id": 4,
 		"name": "level number 2",
@@ -107,6 +107,16 @@
 		"position": [
 			400,
 			960
+		]
+	},
+	{
+		"commands_raw": "mentality\nsignal(set,mentality,-5)",
+		"gnode_name": "testing 2",
+		"id": 13,
+		"name": "Testing 2",
+		"position": [
+			580,
+			20
 		]
 	}
 ]
