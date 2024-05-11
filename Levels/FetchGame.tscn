@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0hvq5gerjbh7"]
+[gd_scene load_steps=7 format=3 uid="uid://b0hvq5gerjbh7"]
 
 [ext_resource type="PackedScene" uid="uid://cejci8s771bp8" path="res://Players/fetch_player.tscn" id="1_j4nln"]
 [ext_resource type="Script" path="res://Levels/FetchGame.gd" id="1_o1wba"]
+[ext_resource type="Texture2D" uid="uid://bexga3408vwcy" path="res://Assets/Art/LevelBagground.jpg" id="2_nw2s6"]
 [ext_resource type="PackedScene" uid="uid://f4y71ybjpie3" path="res://Players/floating_object.tscn" id="2_v4dob"]
 [ext_resource type="PackedScene" uid="uid://bfr76ov3fxrkb" path="res://Players/center_object.tscn" id="3_7vqsd"]
+[ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="6_1hvsy"]
 
 [node name="FetchGame" type="Node2D"]
 script = ExtResource("1_o1wba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(680, 350)
+texture = ExtResource("2_nw2s6")
 
 [node name="CenterPoint" type="Node2D" parent="."]
 position = Vector2(600, 350)
@@ -42,3 +48,6 @@ rotation = 3.14159
 [node name="CenterObject" parent="." instance=ExtResource("3_7vqsd")]
 position = Vector2(600, 350)
 scale = Vector2(1.32, 1.32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CenterObject"]
+texture = ExtResource("6_1hvsy")

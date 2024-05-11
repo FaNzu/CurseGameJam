@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 500.0
 
 
 func _physics_process(delta):
@@ -12,6 +12,9 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
+	
+	position.x = clamp(position.x, 0, 1200)
+	position.y = clamp(position.y, 0, 750)
 	
 	velocity = velocity.move_toward(input_vector * SPEED, 300 * delta)
 

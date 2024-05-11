@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://iugdevvkpbib"]
+[gd_scene load_steps=4 format=3 uid="uid://iugdevvkpbib"]
 
 [ext_resource type="Texture2D" uid="uid://8q3ebhx8tgmf" path="res://Assets/Art/pond22222.png" id="1_0j5fh"]
 [ext_resource type="PackedScene" uid="uid://dprn0ein2x4jb" path="res://Players/pond_player.tscn" id="2_ebdfa"]
+[ext_resource type="Texture2D" uid="uid://chq2wy2632sj" path="res://Assets/Art/akandemedfarve.png" id="3_trcfy"]
 
 [node name="Pond" type="Node2D"]
 
@@ -11,3 +12,44 @@ scale = Vector2(1, 1.07143)
 texture = ExtResource("1_0j5fh")
 
 [node name="PondPlayer" parent="." instance=ExtResource("2_ebdfa")]
+position = Vector2(602, 375)
+scale = Vector2(0.34, 0.34)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(601, 373)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(100, 30)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(200, -30)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(50, -200)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
+position = Vector2(-100, -50)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
+position = Vector2(-200, -30)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
+position = Vector2(-280, 100)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
+position = Vector2(-63, 90)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 200)
+texture = ExtResource("3_trcfy")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Node2D"]
+position = Vector2(140, 240)
+texture = ExtResource("3_trcfy")

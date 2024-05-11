@@ -1,4 +1,5 @@
-extends Node2D
+@tool
+class_name EzDialogue extends EzDialogueReader
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$CenterPoint.rotation += 0.6 * delta
+	super._process(delta)
+	pass

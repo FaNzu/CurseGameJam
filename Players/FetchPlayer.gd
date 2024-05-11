@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @export var arm_index = 0
-@export var ACCELERATION = 500
-@export var MAX_SPEED = 800
-@export var FRICTION = 500
+@export var ACCELERATION = 1000
+@export var MAX_SPEED = 1000
+@export var FRICTION = 200
 @export var start_player_position = Vector2(50,350)
 const screen_size = Vector2(1200,700)
 
