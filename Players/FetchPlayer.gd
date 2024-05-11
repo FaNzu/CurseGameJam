@@ -13,7 +13,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	$Sprite2D.texture = load("res://Assets/Art/Arm.png")
 	if Game.fetch_arms_sprite == "tongue":
-		$Sprite2D.texture = load("res://Assets/Art/Arm.png")
+		$Sprite2D.texture = load("res://Assets/Art/tunge.png")
+		$Sprite2D.scale = Vector2(1.290, 2.190)
+		$Sprite2D.rotation = deg_to_rad(-270)
+		$Sprite2D.position = Vector2(-475,7)
+		$Sprite2D.offset = Vector2(60,0)
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO

@@ -53,9 +53,38 @@ func _on_ez_dialogue_custom_signal_received(value):
 		var variable_sprite_name = params[1]
 		var variable_sprite_variable = params[2]
 		get_node(variable_sprite_name).position = state[variable_sprite_variable]
+	if params[0] == "diaplayer":
+		var variable_sprite_name = params[1]
+		if variable_sprite_name == "tadpole_normal":
+			$DialogueBox/PlayerSprite.texture = load("res://Assets/Art/Tadpole normal.png")
+		elif variable_sprite_name == "tadpole_cursed":
+			$DialogueBox/PlayerSprite.texture = load("res://Assets/Art/tadpole curse.png")
+		elif variable_sprite_name == "tadpole_happy":
+			$DialogueBox/PlayerSprite.texture = load("res://Assets/Art/Tadpole happy2.png")
+		elif variable_sprite_name == "frog_normal":
+			$DialogueBox/PlayerSprite.texture = load("res://Assets/Art/Frogfam1.png")
+			$DialogueBox/PlayerSprite.flip_h = true
+			$DialogueBox/PlayerSprite.rotate(-45)
+	if params[0] == "diaNPC":
+		var variable_sprite_name = params[1]
+		if variable_sprite_name == "Grandpa":
+			$DialogueBox/Sobreo.show()
+			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Bestefarsvigerfør.png")
+			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
+		elif variable_sprite_name == "UncleMosqioto":
+			$DialogueBox/Sobreo.hide()
+			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Onkel myg.png")
+			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
+		elif variable_sprite_name == "Snake":
+			$DialogueBox/Sobreo.hide()
+			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Snakehead.png")
+			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
+		elif variable_sprite_name == "Beetle":
+			$DialogueBox/Sobreo.hide()
+			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Bille.png")
+			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
 
 func _on_ez_dialogue_end_of_dialogue_reached():
-	Game.playerName = "sdtfuhovc2ty13"
 	$DialogueBox.hide()
 	$BoardCharacters.show()
 	$Button.show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://iugdevvkpbib"]
+[gd_scene load_steps=15 format=3 uid="uid://iugdevvkpbib"]
 
 [ext_resource type="Script" path="res://Utility/Main.gd" id="1_2rxho"]
 [ext_resource type="JSON" path="res://Assets/dialogue.json" id="2_cq58q"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chq2wy2632sj" path="res://Assets/Art/akandemedfarve.png" id="3_trcfy"]
 [ext_resource type="Script" path="res://Menus/DialogueBox.gd" id="4_uxkol"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="5_p2pq8"]
-[ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="6_nrnkq"]
 [ext_resource type="Texture2D" uid="uid://dkv3qaavtlkwr" path="res://Assets/Art/Tadpole normal.png" id="6_rbbcw"]
-[ext_resource type="Texture2D" uid="uid://dhm5mba2hxub3" path="res://Assets/Art/Blomst.png" id="8_878ql"]
 [ext_resource type="Script" path="res://Menus/MentalityMeter.gd" id="9_c8ivt"]
 [ext_resource type="Texture2D" uid="uid://ckrxdpeh1tpv8" path="res://Assets/Art/Bestefarsvigerfør.png" id="11_26isg"]
 [ext_resource type="Texture2D" uid="uid://b7gm3rjg0uo6m" path="res://Assets/Art/Frogfam1.png" id="12_chqux"]
@@ -38,14 +36,17 @@ position = Vector2(601, 373)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pods"]
 position = Vector2(100, 30)
+rotation = 1.07687
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Pods"]
 position = Vector2(200, -30)
+rotation = -0.741765
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Pods"]
 position = Vector2(50, -200)
+rotation = 0.698132
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Pods"]
@@ -54,28 +55,33 @@ texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Pods"]
 position = Vector2(-200, -30)
+rotation = 2.27416
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Pods"]
 position = Vector2(-280, 100)
+rotation = -1.01229
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Pods"]
 position = Vector2(-63, 90)
+rotation = 0.523599
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Pods"]
 position = Vector2(0, 200)
+rotation = 0.881391
 texture = ExtResource("3_trcfy")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Pods"]
 position = Vector2(140, 240)
+rotation = -0.619592
 texture = ExtResource("3_trcfy")
 
 [node name="Frog" type="Sprite2D" parent="Pods"]
-position = Vector2(-7.00001, -2.57474)
-scale = Vector2(0.13289, 0.13289)
+scale = Vector2(0.240864, 0.21433)
 texture = ExtResource("6_rbbcw")
+offset = Vector2(-53.18, 83.42)
 
 [node name="DialogueBox" type="Node2D" parent="."]
 visible = false
@@ -98,13 +104,21 @@ theme_override_font_sizes/font_size = 35
 text = "This is some dialogue"
 
 [node name="PlayerSprite" type="Sprite2D" parent="DialogueBox"]
-position = Vector2(148, 366)
-texture = ExtResource("6_nrnkq")
+position = Vector2(197, 320)
+rotation = 1.12574
+scale = Vector2(0.372093, 0.372093)
+texture = ExtResource("6_rbbcw")
 
 [node name="CutsceneNPC" type="Sprite2D" parent="DialogueBox"]
-position = Vector2(980, 142)
-scale = Vector2(0.368991, 0.368991)
-texture = ExtResource("8_878ql")
+position = Vector2(1018, 196)
+scale = Vector2(0.865868, 0.865868)
+texture = ExtResource("11_26isg")
+
+[node name="Sobreo" type="Sprite2D" parent="DialogueBox"]
+visible = false
+position = Vector2(1014, 82)
+scale = Vector2(0.328432, 0.360294)
+texture = ExtResource("13_b0sf6")
 
 [node name="Button" type="Button" parent="."]
 visible = false
@@ -115,6 +129,7 @@ offset_bottom = 659.0
 text = "Ready to start level"
 
 [node name="MentalityMeter" type="Node2D" parent="."]
+visible = false
 position = Vector2(339, 680)
 script = ExtResource("9_c8ivt")
 

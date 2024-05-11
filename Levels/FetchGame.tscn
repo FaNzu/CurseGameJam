@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Levels/FetchGame.gd" id="1_o1wba"]
 [ext_resource type="PackedScene" uid="uid://f4y71ybjpie3" path="res://Players/floating_object.tscn" id="2_v4dob"]
 [ext_resource type="PackedScene" uid="uid://bfr76ov3fxrkb" path="res://Players/center_object.tscn" id="3_7vqsd"]
-[ext_resource type="Texture2D" uid="uid://dshmi7fv8f6c5" path="res://Assets/Art/Crate.png" id="6_1hvsy"]
+[ext_resource type="Texture2D" uid="uid://xg85a70lsspm" path="res://Assets/Art/Onkel myg.png" id="5_ffsjy"]
 
 [node name="FetchGame" type="Node2D"]
 script = ExtResource("1_o1wba")
@@ -13,29 +13,6 @@ script = ExtResource("1_o1wba")
 offset_right = 1200.0
 offset_bottom = 750.0
 color = Color(0, 0.137255, 0.458824, 1)
-
-[node name="CenterPoint" type="Node2D" parent="."]
-position = Vector2(600, 350)
-
-[node name="FloatingObject1" parent="CenterPoint" instance=ExtResource("2_v4dob")]
-position = Vector2(-222, -115)
-scale = Vector2(1.825, 1.825)
-
-[node name="FloatingObject2" parent="CenterPoint" instance=ExtResource("2_v4dob")]
-position = Vector2(75, -151)
-scale = Vector2(1.825, 1.825)
-
-[node name="FloatingObject3" parent="CenterPoint" instance=ExtResource("2_v4dob")]
-position = Vector2(-32, 161)
-scale = Vector2(1.825, 1.825)
-
-[node name="FloatingObject4" parent="CenterPoint" instance=ExtResource("2_v4dob")]
-position = Vector2(-1, 219)
-scale = Vector2(1.825, 1.825)
-
-[node name="FloatingObject5" parent="CenterPoint" instance=ExtResource("2_v4dob")]
-position = Vector2(-120, -196)
-scale = Vector2(3.33063, 3.33063)
 
 [node name="FetchPlayer" parent="." instance=ExtResource("1_j4nln")]
 position = Vector2(55, 377)
@@ -50,4 +27,33 @@ position = Vector2(600, 350)
 scale = Vector2(1.32, 1.32)
 
 [node name="Sprite2D2" type="Sprite2D" parent="CenterObject"]
-texture = ExtResource("6_1hvsy")
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("5_ffsjy")
+
+[node name="CenterPoint" type="Node2D" parent="CenterObject"]
+scale = Vector2(0.757576, 0.757576)
+
+[node name="FloatingObject1" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
+visible = false
+position = Vector2(-222, -115)
+scale = Vector2(1.825, 1.825)
+
+[node name="FloatingObject2" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
+visible = false
+position = Vector2(75, -151)
+scale = Vector2(1.825, 1.825)
+
+[node name="FloatingObject3" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
+visible = false
+position = Vector2(-32, 161)
+scale = Vector2(1.825, 1.825)
+
+[node name="FloatingObject4" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
+visible = false
+position = Vector2(-1, 219)
+scale = Vector2(1.825, 1.825)
+
+[node name="FloatingObject5" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
+visible = false
+position = Vector2(-120, -196)
+scale = Vector2(3.33063, 3.33063)
