@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://iugdevvkpbib"]
+[gd_scene load_steps=16 format=3 uid="uid://iugdevvkpbib"]
 
 [ext_resource type="Script" path="res://Utility/Main.gd" id="1_2rxho"]
 [ext_resource type="JSON" path="res://Assets/dialogue.json" id="2_cq58q"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ckrxdpeh1tpv8" path="res://Assets/Art/Bestefarsvigerfør.png" id="11_26isg"]
 [ext_resource type="Texture2D" uid="uid://b7gm3rjg0uo6m" path="res://Assets/Art/Frogfam1.png" id="12_chqux"]
 [ext_resource type="Texture2D" uid="uid://351mh021e1vh" path="res://Assets/Art/Sobreo.png" id="13_b0sf6"]
+[ext_resource type="AudioStream" uid="uid://dlo0a7twmg72s" path="res://Assets/Audio/summer-adventures-115949.mp3" id="13_xbwjm"]
 [ext_resource type="Texture2D" uid="uid://bkrkwd3och3kp" path="res://Assets/Art/Snakehead.png" id="14_8t15o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_debbw"]
@@ -182,6 +183,10 @@ position = Vector2(660, 81)
 rotation = 1.35263
 scale = Vector2(0.114319, 0.114319)
 texture = ExtResource("14_8t15o")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_xbwjm")
+autoplay = true
 
 [connection signal="custom_signal_received" from="EzDialogue" to="." method="_on_ez_dialogue_custom_signal_received"]
 [connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]

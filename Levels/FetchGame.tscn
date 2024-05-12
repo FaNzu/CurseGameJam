@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0hvq5gerjbh7"]
+[gd_scene load_steps=7 format=3 uid="uid://b0hvq5gerjbh7"]
 
 [ext_resource type="PackedScene" uid="uid://cejci8s771bp8" path="res://Players/fetch_player.tscn" id="1_j4nln"]
 [ext_resource type="Script" path="res://Levels/FetchGame.gd" id="1_o1wba"]
 [ext_resource type="PackedScene" uid="uid://f4y71ybjpie3" path="res://Players/floating_object.tscn" id="2_v4dob"]
 [ext_resource type="PackedScene" uid="uid://bfr76ov3fxrkb" path="res://Players/center_object.tscn" id="3_7vqsd"]
 [ext_resource type="Texture2D" uid="uid://xg85a70lsspm" path="res://Assets/Art/Onkel myg.png" id="5_ffsjy"]
+[ext_resource type="AudioStream" uid="uid://blksoij3h8vv8" path="res://Assets/Audio/reflected-light-147979.mp3" id="6_3ktvy"]
 
 [node name="FetchGame" type="Node2D"]
 script = ExtResource("1_o1wba")
@@ -34,26 +35,25 @@ texture = ExtResource("5_ffsjy")
 scale = Vector2(0.757576, 0.757576)
 
 [node name="FloatingObject1" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
-visible = false
 position = Vector2(-222, -115)
 scale = Vector2(1.825, 1.825)
 
 [node name="FloatingObject2" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
-visible = false
 position = Vector2(75, -151)
 scale = Vector2(1.825, 1.825)
 
 [node name="FloatingObject3" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
-visible = false
 position = Vector2(-32, 161)
 scale = Vector2(1.825, 1.825)
 
 [node name="FloatingObject4" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
-visible = false
 position = Vector2(-1, 219)
 scale = Vector2(1.825, 1.825)
 
 [node name="FloatingObject5" parent="CenterObject/CenterPoint" instance=ExtResource("2_v4dob")]
-visible = false
 position = Vector2(-120, -196)
 scale = Vector2(3.33063, 3.33063)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3ktvy")
+autoplay = true

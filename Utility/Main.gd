@@ -42,6 +42,8 @@ func _on_ez_dialogue_custom_signal_received(value):
 		elif variable_name == "mentality":
 			Game.mentality += int(variable_value)
 			$MentalityMeter/ProgressBar.value += int(variable_value)
+		if variable_name == "fetch_center_sprite":
+			Game.fetch_center_sprite = variable_value
 	if params[0] == "setvector":
 		var variable_name = params[1]
 		var variable_valuex = params[2]
@@ -82,6 +84,10 @@ func _on_ez_dialogue_custom_signal_received(value):
 		elif variable_sprite_name == "Beetle":
 			$DialogueBox/Sobreo.hide()
 			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Bille.png")
+			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
+		elif variable_sprite_name == "frog":
+			$DialogueBox/Sobreo.hide()
+			$DialogueBox/CutsceneNPC.texture = load("res://Assets/Art/Frogfam1.png")
 			$DialogueBox/CutsceneNPC.scale = Vector2(float(params[2]),float(params[3]))
 
 func _on_ez_dialogue_end_of_dialogue_reached():
